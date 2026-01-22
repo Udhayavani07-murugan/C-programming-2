@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    float amount, discount;
+
+    printf("Enter total purchase amount: ");
+    scanf("%f", &amount);
+
+    if (amount >= 1000) {
+        discount = amount * 0.10;
+        printf("You get a discount of Rs %.2f\n", discount);
+        printf("Final amount to pay: Rs %.2f\n", amount - discount);
+    } else {
+        printf("No discount available.\n");
+        printf("Amount to pay: Rs %.2f\n", amount);
+    }
+
+    return 0;
+}
