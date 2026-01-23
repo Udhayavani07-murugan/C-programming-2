@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, present = 0;
+    int attendance[50];
+
+    printf("Enter total number of students: ");
+    scanf("%d", &n);
+
+    // Input attendance (1 = Present, 0 = Absent)
+    for(i = 0; i < n; i++) {
+        printf("Enter attendance of student %d (1 = Present, 0 = Absent): ", i + 1);
+        scanf("%d", &attendance[i]);
+
+        if(attendance[i] == 1) {
+            present++;
+        }
+    }
+
+    // Display result
+    printf("\nNumber of present students = %d\n", present);
+
+    return 0;
+}
