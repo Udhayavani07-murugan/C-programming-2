@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+struct Student {
+    int id;
+    char name[50];
+    float marks;
+};
+
+int main() {
+    struct Student s;
+
+    printf("Enter student ID: ");
+    scanf("%d", &s.id);
+    printf("Enter student name: ");
+    scanf(" %[^\n]", s.name); // To read full name with spaces
+    printf("Enter marks: ");
+    scanf("%f", &s.marks);
+
+    printf("\nStudent Details:\nID: %d\nName: %s\nMarks: %.2f\n", s.id, s.name, s.marks);
+    return 0;
+}
