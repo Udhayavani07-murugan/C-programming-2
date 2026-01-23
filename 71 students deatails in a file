@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+struct Student {
+    int id;
+    char name[50];
+    float marks;
+};
+
+int main() {
+    struct Student s;
+    FILE *fp;
+
+    printf("Enter student ID: ");
+    scanf("%d", &s.id);
+    printf("Enter student name: ");
+    scanf(" %[^\n]", s.name);
+    printf("Enter marks: ");
+    scanf("%f", &s.marks);
+
+    fp = fopen("students.txt", "a"); // Open file in append mode
+    if (fp == NULL) {
+        printf("Error opening file.\n");
+        return 1;
+    }
+
+    fprintf(fp, "ID: %d, Name: %s, Marks: %.2f\n", s.id, s.name, s.marks);
+    fclose(fp);
+
+    printf("Student details saved successfully.\n");
+    return 0;
+}
