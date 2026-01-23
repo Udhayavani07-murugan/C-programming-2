@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+struct Student {
+    char name[50];
+    int marks1;
+    int marks2;
+    int marks3;
+};
+
+int main() {
+    struct Student s;
+    int total;
+
+    printf("Enter student name: ");
+    scanf(" %[^\n]", s.name);
+    printf("Enter marks of 3 subjects: ");
+    scanf("%d %d %d", &s.marks1, &s.marks2, &s.marks3);
+
+    total = s.marks1 + s.marks2 + s.marks3;
+    printf("\nStudent: %s\nTotal Marks: %d\n", s.name, total);
+    return 0;
+}
